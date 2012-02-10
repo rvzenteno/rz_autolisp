@@ -2,6 +2,7 @@
 (PROMPT "\nLoading Costum LISP Routines..............")(princ)
 (princ)
 
+;; Added one line of commeints
 
 (defun c:ccb ()(command "change" "all" "" "p" "c" "bylayer" "")) 
 (defun c:c ()(command "copy"))
