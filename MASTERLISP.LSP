@@ -1,3 +1,25 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;
+;;;;;				This Files contains a variety of routines I've created or collected from other
+;;;;;				sources to automate, customize and speed up working in AutoCAD (c).
+;;;;;
+;;;;;				Though I've been customizing my routines for several years this is the first
+;;;;;				time that I've decided to posted to a online Repository.				
+;;;;;
+;;;;;				This routines can be used by anybody. I only requet that proper recognition is given
+;;;;;				to any thing that is taken from this routine.				
+;;;;;
+;;;;;
+;;;;;				LANGUAGE:		AutoLISP
+;;;;;				Creator:			Roberto Zenteno
+;;;;;				Version:			1.0
+;;;;;				Date:				2-10-2012
+;;;;;				GitHub Info:		This is the first release fo this file to the GitHub.com repository
+;;;;;				Github Repo:		rvzenteno/rz_autolisp
+;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
 (princ)
 (PROMPT "\nLoading Costum LISP Routines..............")(princ)
 (princ)
@@ -53,6 +75,25 @@
 (defun C:cb0 ()(command "copybase" "0,0" pause))
 (defun c:pc () (command "pasteclip"))
 (defun c:pc0 ()(command "pasteclip" "0,0"))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; WITH THIS ROUTINE YOU RUN A SERIES OF
+;;; PURGES AND AUDIT TO CLEAN ANY CONFLICTS
+;;; THAT YOU MIGHT BE HAVING WITH A DRAWING
+;;; THAT IS CRASHING FRECUENTLY
+;;;  	Version 1.0
+
+ (defun C:PPA ()
+ (command "purge" "a" "*" "n")
+(command "purge" "a" "*" "n")
+(command "purge" "a" "*" "n")
+(command "audit" "y")
+(command "purge" "a" "*" "n")
+(command "qsave"))
+
+
+
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
